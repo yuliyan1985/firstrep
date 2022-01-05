@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html !DOCTYPE>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+
+<form action="array_exercise.php" method="POST">
+	<input class="formelement" type="text" name="name" placeholder="цифра">
+	<br>
+	<input class="formelement" type="text" name="name" placeholder="име"> <br>
+	<button class="formelement" type="submit" name="submit">submit</button>
+
+<?php
+
+// echo strlen("test");
+// echo "<br>";
+// echo substr("boy",0,1);
+// echo "<br>";
+// echo substr("apple",0,1);
+
+// count
+// strlen
+// substr
+// rand
+
+
+
+// Напиши скрипт - който да взима произволна променлива, цифра м/у 1 и 10 (https://www.php.net/rand ) .
+// Да изписва на екран изтеглената цифра - "изтеглихме число Х".
+// Ако променливата с цифрата е по-голяма от  5 да изписва на екран "Цифрата е по-голяма от 5" ако е по-малка "Цифрата е по-малка от 5" ако е равна на 5 - да изписва "ти печелиш" -->
+
+   if($task > $_POST["name"]){
+	echo  "цифрата е по-голяма от 5";
+   } else {
+   echo "цифрата е по-малка от 5";
+   }
+   if($task == $_POST["name"]){
+	echo"ти печелиш";
+	}
+	echo "<br>";
+	echo "изтегленото число е ";
+echo $task;
+
+?>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
