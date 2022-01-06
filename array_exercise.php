@@ -23,7 +23,7 @@
 <form action="array_exercise.php" method="POST">
 	<input class="formelement" type="text" name="name" placeholder="цифра">
 	<br>
-	<input class="formelement" type="text" name="name1" placeholder="име"> <br>
+	<input class="formelement" type="text" name="name1"` placeholder="име"> <br>
 	<button class="formelement" type="submit" name="submit">submit</button>
 
 <?php
@@ -54,9 +54,10 @@ $task=rand(0,10);
 	echo"ти печелиш";
 	}
 	echo "<br>";
-	echo "изтегленото число е ";
-echo $task;
 
+echo $task;
+echo"<br>";
+echo $_POST ["name1"] . "изтегли числото" . $task;
 ?>
 
 
