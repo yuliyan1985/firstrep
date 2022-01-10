@@ -1,9 +1,6 @@
 <?php
-$a = 5;
-$b = 6;
-$c = 1.2;
-
-echo $a + $b * $c;
+$fruits = ["banana", "apple","orange"];
+var_dump($fruits);
 ?>
 
 
