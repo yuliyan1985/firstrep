@@ -78,7 +78,7 @@
 
 
  
-function check($a,$b) {
+functio n check($a,$b) {
 	if ($a==$b) {
 		return $a * 3;
 	}else{ 
