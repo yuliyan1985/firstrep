@@ -3,68 +3,51 @@ session_start();
 ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-</head>
-<body>
 
 
-<form action="array_exercise.php" method="POST">
-    <input class="formelement" type="text" name="number" placeholder="цифра">
-    <br>
-    <input class="formelement" type="text" name="name" placeholder="име"> <br>
-    <button class="formelement" type="submit">press</button>
-    <br>
 
     <?php
-
-
+    require 'array_view.php';
     $task = rand(0, 10);
 
     echo "<br>";
-    echo $_POST ["name"] . " изтегли числото " . $task;
+    echo $_POST ["fname"]  . " изтегли числото " . $task;
     echo "<br>";
+
+
+
 
     if ($task > $_POST ["number"]) {
         echo "цифрата е по-малка от $task";
-    $az_pechelq =false;
+        $win = false;
 
     }
     if ($task < $_POST["number"]) {
         echo "цифрата е по-голяма от $task";
-    $az_pechelq =false;
-    echo"<br>";
+        $win = false;
+        echo "<br>";
     }
     if ($task == $_POST["number"]) {
         echo "<br>";
         echo "ти печелиш";
-    $az_pechelq =true;
+        $win = true;
 
     }
-    if ($az_pechelq ) {
-        $_SESSION["player"] = $_SESSION["player"] +1;
+    if ($win) {
+        $_SESSION ["player"] = $_SESSION["player"] + 1;
+    } else {
+        $_SESSION["pc"] = $_SESSION["pc"] + 1;
     }
-    else {
-        $_SESSION["pc"] = $_SESSION["pc"] +1;
-    }
-    echo"<br>";
-    echo  " играч печели " . $_SESSION["player"];
-    echo"<br>";
+    echo "<br>";
+    echo " играч печели " . $_SESSION["player"];
+    echo "<br>";
     echo " компютър печели " . $_SESSION["pc"];
 
-
-
-
-
-
+    $_SESSION["name"] = $_POST["fname"];
 
 
 
     ?>
 
-</body>
-</html>
+
 
