@@ -1,7 +1,10 @@
 <?php
 session_start();
-var_dump($_GET['name']);
-$number =intval($_GET["name"]);
+
+
+
+var_dump((int)$_GET['name']);
+$number =(int)($_GET["name"]);
 $sum = 0;
 
 
@@ -19,12 +22,28 @@ if (is_int($number)) {
 }
 echo "Текущ резултат:" . $sum;
 echo "<br>";
+
 echo "Предишен резултат:" . $_SESSION["previous"];
 echo "<br>";
-$_SESSION["previous"] = ($sum);
+
+$_SESSION["previous"] = $sum;
 echo "<br>";
 
+$_SESSION["torture"] = $_SESSION["torture"] + $sum;
+
 echo "<br>";
+
+echo '=------------------------------------=';
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+echo "Сумиран резултат:" . $_SESSION["torture"];
+echo "<br>";
+
+
+
+
 
 
 // || - или   OR

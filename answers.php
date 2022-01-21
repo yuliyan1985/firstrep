@@ -76,9 +76,9 @@
 
 
 
-
+<?php 
  
-functio n check($a,$b) {
+function check($a,$b) {
 	if ($a==$b) {
 		return $a * 3;
 	}else{ 
@@ -149,3 +149,199 @@ function task($apple) {
 }
 	task("apple");
 	task("boy");
+
+
+
+
+
+function acc($a) {
+ 	if(is_int($a)){
+ 		return $a * 10;
+ 	}
+		
+	if(is_array($a)){
+	 	return array_sum($a);
+
+	 	// $sum = 0;
+	 	// foreach ($a as $key => $value) {
+	 	// 	$sum = $sum + $value;
+	 	// }
+	 	// return $sum;
+	}
+}
+var_dump(acc(5));
+var_dump(acc([1,2,3]));
+
+
+
+
+
+
+// function check30($a,$b){
+	// if(
+		// ($a == 30) 
+		// or ($b == 30) 
+		// or (($a + $b) == 30)
+	// )
+	// {
+		// return true;
+	// }
+	// else{
+		// return false;
+	// }
+
+// }
+
+// var_dump (check30(30,0));
+// var_dump (check30(25,5));
+// var_dump (check30(20,30)); 
+// var_dump (check30(20,25)); 
+
+
+
+function check40($a){
+	if(
+		($a < 50)
+		or (($a > 100) && ($a < 200))
+	   )
+	   {
+	   return true;
+	   }
+	   {
+	   return false;
+	   }
+}
+
+	var_dump(check40(1));
+	var_dump(check40(55));
+	var_dump(check40(88));
+	var_dump(check40(106));
+
+
+
+
+
+
+
+
+// $test = 20;
+// $test2 = 20;
+
+
+// if($test > $test2) {
+// 	$test3 = "iuli";
+// } else {
+// 	$test3 = false;
+// }
+
+// if($test == $test2){
+// 	$test3 = $test;
+// }
+		
+	
+// var_dump($test3);
+
+
+
+
+
+
+
+
+$test = 10;
+$test2 = 20;
+
+
+if($test > $test2) {
+	$test3 = "iuli";
+} 
+else {
+	$test3 = false;
+}
+
+if($test == $test2){
+	$test3 = $test;
+}
+		
+
+
+
+		
+
+$try1 = [
+	"var1" => $test,
+	"var2" => $test2,
+	"var3" => $test3
+];
+
+
+	
+var_dump($try1);
+
+
+
+// $test = "computer";
+	
+// function newTask($test) {
+// 	$length = strlen($test);
+	
+// 	$start = substr($test, 0, 1);
+// 	$star = 'k';
+// 	$star = substr($test, -1);
+// 	for($x=1;$x <= ($length -2);$x++)
+// 	{
+// 	   $start = $start.'*';	
+
+// 	}
+
+// $start = $start.$star;
+// 	return $start;
+	
+// }
+
+// echo newTask($test);
+
+
+
+$test = "iuli";
+
+function test($test)
+{
+	$length = strlen($test);
+	if($length <= 3)
+	{
+		return [$test];
+	}
+
+	if($length % 2)
+	{
+		$firstPart = substr($test, 0, ($length / 2));
+		$lastPart = substr($test, ($length / 2));
+		return [$firstPart, $lastPart]
+	}
+	else
+}
+
+// $a = "**";
+// $b = "k";
+// $c = $a . $b;
+// $e = $c;
+
+// echo $e;
+
+
+
+$task = rand(1,10);
+
+   if($task > 5){
+	echo  "цифрата е по-голяма от 5";
+   } else {
+   	echo "цифрата е по-малка от 5";
+   }
+	if($task == 5){
+	echo"ти печелиш";
+	}
+	echo "<br>";
+echo $task;
+
+
