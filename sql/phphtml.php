@@ -5,6 +5,18 @@
     <meta charset="utf-8">
     <title></title>
     <style>
+        .formelement {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+        .formelemeent {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -29,28 +41,20 @@
 <input class="formelement" type="text" name="number" placeholder="число">
     <br>
 
-    <button class="formelement" type="submit">push</button>
+    <button class="formelemeent" type="submit">push</button>
     <br>
 </form>
 
 
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>id</th>
+        <th>user_number</th>
+        <th>computer_number</th>
+        <th>win_loss</th>
     </tr>
     <tr>
         <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
         <td></td>
         <td></td>
         <td></td>
@@ -59,17 +63,33 @@
         <td></td>
         <td></td>
         <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
         <td></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
 </table>
 
 

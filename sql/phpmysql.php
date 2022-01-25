@@ -15,8 +15,10 @@ VALUES (NULL ," .  $_POST ["number"]."," . $number . ","  . (int)$win.");";
 
 $q = $conn->prepare($sql);
 $q->execute();
-
-
-
+$sqlselect = "SELECT * FROM number_guess";
+$statement = $conn->query($sqlselect);
+$number_guess = $statement->fetchAll(PDO::FETCH_ASSOC);
+echo "<pre>";
+var_dump($number_guess);
 ?>
 

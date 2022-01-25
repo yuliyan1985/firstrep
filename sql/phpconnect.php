@@ -17,6 +17,7 @@ if ($number == $_POST["number"]) {
     $win = true;
 
 }
+
 ?>
 
 
