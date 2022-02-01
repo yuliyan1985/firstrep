@@ -34,8 +34,8 @@
         }
     </style>
 </head>
-<body>
 
+<body>
 
 <form action="phpmysql.php" method="POST">
 
@@ -80,9 +80,11 @@
             echo '</tr>';
 
         }
+
 ?>
 
 </table>
+
 
 
 </body>

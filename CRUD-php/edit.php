@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<input type="result_a" type="text" name="number" placeholder="число"<?php echo $a?>>
+<input type="result_b" type="text" name="number" placeholder="число"<?php echo $b?>>
+<input type="result_c" type="text" name="number" placeholder="число"><?php echo $c?>>
+<input type="result_d" type="text" name="number" placeholder="число"><?php echo $d?>>
+
 <?php
 require_once 'db.php';
 try {
@@ -21,6 +30,16 @@ if (isset($_GET['edit'])) {
         $b = $result['user_number'];
         $c = $result['computer_number'];
         $d = $result['win_loss'];
-    echo $a, $b, $c, $d;
+
+
+
+
+
     }
 }
+
+
+
+
+
+
