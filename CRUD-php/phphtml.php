@@ -38,13 +38,15 @@
 
 
 <form action="phpmysql.php" method="POST">
-<input class="formelement" type="text" name="number" placeholder="число">
+
+    <input class="formelement" type="text" name="number" placeholder="число">
     <br>
 
-    <button class="formelemeent" type="submit">push</button>
+    <button class="formelemeent" type="submit">update</button>
+
     <br>
+
 </form>
-
 
 <table>
     <tr>
@@ -52,43 +54,33 @@
         <th>user_number</th>
         <th>computer_number</th>
         <th>win_loss</th>
+        <th>CRUD</th>
+
+
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+
+    <?php
+
+
+        foreach ($number_guess as $row) {
+
+            echo '<tr>';
+
+            echo '<th>' . $row["id"] .  '</th>';
+            echo '<th>' . $row["user_number"] .  '</th>';
+            echo '<th>' . $row["computer_number"] .  '</th>';
+            echo '<th>' . $row["win_loss"] .  '</th>';
+
+            echo '<th>' . "<a href='http://php.local/CRUD-php/edit.php?edit=" .
+                       $row['id'] . "' class='btn btn-info'>Edit</a>";
+
+            echo "<a href= http://php.local/CRUD-php/phpmysql.php?delete=".$row['id']." class='btn btn-danger'>Delete</a>";
+            '</th>';
+
+            echo '</tr>';
+
+        }
+?>
 
 </table>
 
