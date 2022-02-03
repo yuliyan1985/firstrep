@@ -54,9 +54,10 @@ if (isset($_POST['update'])) {
     $computer_name = $_POST['computer_name'];
     $win_loss = $_POST['win_loss'];
 
-    $query = "UPDATE number_guess SET  id = '$id' ,user_name = '$user_name', computer_name = '$computer_name' ,win_loss = '$win_loss'  WHERE id='$id' ";
+    $query = "UPDATE number_guess SET  id = '$id' ,user_number = '$user_name', computer_number = '$computer_name' ,win_loss = '$win_loss'  WHERE id='$id' ";
     $query_run = $conn->prepare($query);
     $query_run->execute();
+
 }
 
 
