@@ -22,22 +22,22 @@ if (isset($_GET['edit'])) {
     $result = $result->fetch();
 
     if (!empty($result)) {
-        $a = $result['id'];
-        $b = $result['user_number'];
-        $c = $result['computer_number'];
-        $d = $result['win_loss'];
-
-
-<input type="result_a" type="text" name="number" placeholder="число"<?php echo $a?>>
-<input type="result_b" type="text" name="number" placeholder="число"<?php echo $b?>>
-<input type="result_c" type="text" name="number" placeholder="число"<?php echo $c?>>
-<input type="result_d" type="text" name="number" placeholder="число"<?php echo $d?>>
-
+         $a = $result['id'];
+         $b = $result['user_number'];
+         $c = $result['computer_number'];
+         $d = $result['win_loss'];
 
     }
 }
+?>
 
-
+<form action="phpmysql.php" method="POST">
+    <input type="text"  name="id" value="<?php echo (isset($a))?$a:'';?>">
+    <input type="text"  name="user_name" value="<?php echo (isset($b))?$b:'';?>">
+    <input type="text"  name="computer_name" value="<?php echo (isset($c))?$c:'';?>">
+    <input type="text"  name="win_loss" value="<?php echo (isset($d))?$d:'';?>">
+    <button type="submit" name="update" class="btn btn-primary">update</button>
+</form>
 
 
 

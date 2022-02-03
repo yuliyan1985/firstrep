@@ -41,8 +41,7 @@
 
     <input class="formelement" type="text" name="number" placeholder="число">
     <br>
-
-    <button class="formelemeent" type="submit">update</button>
+    <button class="formelemeent" type="submit">press</button>
 
     <br>
 

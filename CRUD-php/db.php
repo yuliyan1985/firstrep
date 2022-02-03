@@ -1,8 +1,5 @@
 <?php
-//host: db
-//username: root
-//password: password
-//database: test
+
 
 
 $host = 'db';

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'edit.php';
+
 require_once 'db.php';
 require_once 'phpconnect.php';
 try {
@@ -13,16 +13,15 @@ try {
 
 
 if (isset($_POST['save'])) {
-    $_number = $_POST['number'];
+    $number = $_POST['number'];
 
-
+}
     $sql = "INSERT INTO `number_guess` (`id`, `user_number`, `computer_number`, `win_loss`) 
 
 VALUES (NULL ," . $_POST ["number"] . "," . $number . "," . (int)$win . ");";
 
     $q = $conn->prepare($sql);
     $q->execute();
-}
 
 
 
@@ -43,5 +42,23 @@ if(isset($_GET['delete'])){
 }
 
 
+var_dump($_POST)['update'];
 
+if (isset($_POST['update'])) {
+
+
+    $id = $_POST['update'];
+
+    $id = $_POST['id'];
+    $user_name = $_POST['user_name'];
+    $computer_name = $_POST['computer_name'];
+    $win_loss = $_POST['win_loss'];
+
+    $query = "UPDATE number_guess SET  id = '$id' ,user_name = '$user_name', computer_name = '$computer_name' ,win_loss = '$win_loss'  WHERE id='$id' ";
+    $query_run = $conn->prepare($query);
+    $query_run->execute();
+}
+
+
+?>
 
