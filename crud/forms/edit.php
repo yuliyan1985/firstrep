@@ -35,16 +35,16 @@ if (isset($_GET['edit'])) {
 
 <form action="index.php?action=update" method="POST">
     <label for="text">user_number</label>
-    <input type="text"  name="user_number" value="<?php echo (isset($b))?$b:'';?>">
+    <input type="text" name="user_number" value="<?php echo (isset($b)) ? $b : ''; ?>">
     <label for="text">computer_number</label>
-    <input type="text"  name="computer_number" value="<?php echo (isset($c))?$c:'';?>">
+    <input type="text" name="computer_number" value="<?php echo (isset($c)) ? $c : ''; ?>">
     <label for="text">win_loss</label>
-    <select id="win-loss" name="win-loss"  value="<?php echo (isset($d))?$d:'';?>">
+    <select id="win-loss" name="win-loss" value="<?php echo (isset($d)) ? $d : ''; ?>">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
 
-    <input type="text"  name="id" class="hide" value="<?php echo (isset($a))?$a:'';?>">
+    <input type="text" name="id" class="hide" value="<?php echo (isset($a)) ? $a : ''; ?>">
 
     <button type="submit" name="update" class="btn btn-primary">update</button>
 </form>

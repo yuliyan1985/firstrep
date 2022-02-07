@@ -20,8 +20,13 @@ switch ($_GET['action']) {
     case 'update':
         require_once 'scripts/update.php';
         break;
-
+    case 'delete':
+        require_once 'scripts/delete.php';
+        break;
     default:
+        $sqlselect = "SELECT * FROM number_guess";
+        $statement = $conn->query($sqlselect);
+        $number_guess = $statement->fetchAll(PDO::FETCH_ASSOC);
         require_once 'table.php';
         break;
 }

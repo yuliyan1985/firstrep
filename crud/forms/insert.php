@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +6,15 @@
     <title></title>
     <style>
         .formelement {
-    display: block;
-    margin-left: auto;
+            display: block;
+            margin-left: auto;
             margin-right: auto;
             width: 40%;
         }
+
         .formelemeent {
-    display: block;
-    margin-left: auto;
+            display: block;
+            margin-left: auto;
             margin-right: auto;
             width: 40%;
         }

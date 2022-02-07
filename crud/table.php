@@ -55,7 +55,7 @@ $number_guess = $statement->fetchAll(PDO::FETCH_ASSOC);
         echo '<th>' . "<a href='http://php.local/crud/index.php?action=edit&edit=" .
             $row['id'] . "' class='btn btn-info'>Edit</a> ";
 
-        echo "<a href= http://php.local/crud/scripts/phpmysql.php?delete=" . $row['id'] . " class='btn btn-danger'>Delete</a>";
+        echo "<a href= http://php.local/crud/index.php?action=delete&delete=" . $row['id'] . " class='btn btn-danger'>Delete</a>";
         '</th>';
 
 
