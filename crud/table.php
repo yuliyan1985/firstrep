@@ -1,8 +1,3 @@
-<?php
-$sqlselect = "SELECT * FROM number_guess";
-$statement = $conn->query($sqlselect);
-$number_guess = $statement->fetchAll(PDO::FETCH_ASSOC);
-?>
 <!DOCTYPE html>
 
 <head>
