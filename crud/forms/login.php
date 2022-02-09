@@ -26,7 +26,8 @@
 </head>
 
 <body>
-<form action="scripts/authorization.php" method="POST">
+<form action="index.php?action=authorization" method="POST">
+
     <table align="center">
         <tr>
             <th colspan="2"><h2 align="center">Login</h2></th>

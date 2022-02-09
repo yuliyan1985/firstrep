@@ -31,7 +31,7 @@
         <th>computer_number</th>
         <th>win_loss</th>
         <th>CRUD</th>
-
+        <td align="right" colspan="2"><input type="submit" name="login" value="logout"></td>
 
     </tr>
 
