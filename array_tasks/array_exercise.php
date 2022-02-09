@@ -20,7 +20,6 @@ session_start();
     if ($task > $_POST ["number"]) {
         echo "цифрата е по-малка от $task";
         $win = false;
-
     }
     if ($task < $_POST["number"]) {
         echo "цифрата е по-голяма от $task";
@@ -31,7 +30,6 @@ session_start();
         echo "<br>";
         echo "ти печелиш";
         $win = true;
-
     }
     if ($win) {
         $_SESSION ["player"] = $_SESSION["player"] + 1;
@@ -44,9 +42,6 @@ session_start();
     echo " компютър печели " . $_SESSION["pc"];
 
     $_SESSION["name"] = $_POST["fname"];
-
-
-
     ?>
 
 

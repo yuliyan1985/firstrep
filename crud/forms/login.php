@@ -42,7 +42,7 @@
             <td><input type="password" name="pwd"></td>
         </tr>
 <?php  if ($_SESSION['error']){?>
-        <tr><td><?php echo $_SESSION['error']?></td></tr>
+    <tr><td><?php echo $_SESSION['error']?></td></tr>
 <?php } ?>
         <tr>
             <td align="right" colspan="2"><input type="submit" name="login" value="login"></td>
