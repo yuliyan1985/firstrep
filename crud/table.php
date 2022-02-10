@@ -23,7 +23,8 @@
     </style>
 </head>
 <body>
-<a href="http://php.local/crud/index.php?action=insert">create</a>
+<a href="http://php.local/crud/index.php?action=insert">play guess the number</a>
+<a href="http://php.local/crud/index.php?action=logout">logout</a>
 <table>
     <tr>
         <th>id</th>
@@ -31,7 +32,6 @@
         <th>computer_number</th>
         <th>win_loss</th>
         <th>CRUD</th>
-        <td align="right" colspan="2"><input type="submit" name="login" value="logout"></td>
 
     </tr>
 

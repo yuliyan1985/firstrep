@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 $username = $_POST['uname'];
 $password = $_POST['pwd'];
 $log = "SELECT * FROM `login` WHERE `username` = '" . $username . "' AND `password` = '" . $password . "' ";

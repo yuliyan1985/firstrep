@@ -40,7 +40,7 @@ if (isset($_GET['edit'])) {
     <input type="text" name="computer_number" value="<?php echo (isset($c)) ? $c : ''; ?>">
     <label for="text">win_loss</label>
     <select id="win_loss" name="win_loss">
-        <option value="-1">Mnogo si prost bate</option>
+
         <option value="0" <?php if (!$d) echo 'selected'; ?>>0</option>
         <option value="1"<?php if ($d) echo 'selected'; ?>>1</option>
     </select>

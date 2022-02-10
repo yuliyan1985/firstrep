@@ -6,7 +6,12 @@ if (!isset($_SESSION['locked']) && $_GET['action'] != 'authorization') {
      $_GET['action'] = "login";
 }
 
+
+
+
 switch ($_GET['action']) {
+
+
     case'login':
         require_once 'forms/login.php';
         break;
@@ -38,7 +43,6 @@ switch ($_GET['action']) {
     case 'logout':
         require_once 'forms/logout.php';
         break;
-
 
     default:
         $sqlselect = "SELECT * FROM number_guess";
