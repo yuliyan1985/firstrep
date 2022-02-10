@@ -23,9 +23,9 @@ if ($number == $_POST["number"]) {
 
 
 
-$sql = "INSERT INTO `number_guess` (`id`, `user_number`, `computer_number`, `win_loss`) 
+$sql = "INSERT INTO `number_guess` (`id`, `login_id` `user_number`, `computer_number`, `win_loss`) 
 
-VALUES (NULL ," . $_POST ["number"] . "," . $number . "," . (int)$win . ");";
+VALUES (NULL ," . $_SESSION["locked"] . "," . $_POST ["number"] . "," . $number . "," . (int)$win . ");";
 
 $q = $conn->prepare($sql);
 $q->execute();

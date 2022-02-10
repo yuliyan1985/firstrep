@@ -6,11 +6,15 @@ if (!isset($_SESSION['locked']) && $_GET['action'] != 'authorization') {
      $_GET['action'] = "login";
 }
 
-
-
-
 switch ($_GET['action']) {
 
+    case'server':
+        require_once 'registration/server.php';
+        break;
+
+    case'register':
+        require_once 'registration/register.php';
+        break;
 
     case'login':
         require_once 'forms/login.php';

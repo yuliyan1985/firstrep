@@ -48,6 +48,11 @@
         <tr>
             <td align="right" colspan="2"><input type="submit" name="login" value="login"></td>
         </tr>
+
+        <tr>
+            <td>Already have an account? <a href= "http://php.local/crud/registration/register.php">Sign in</a></td>
+        </tr>
+
     </table>
 </form>
 

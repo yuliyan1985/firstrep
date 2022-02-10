@@ -20,10 +20,15 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+        a {
+            color: darkblue;
+        }
     </style>
 </head>
 <body>
 <a href="http://php.local/crud/index.php?action=insert">play guess the number</a>
+<br>
 <a href="http://php.local/crud/index.php?action=logout">logout</a>
 <table>
     <tr>
