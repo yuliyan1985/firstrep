@@ -33,6 +33,7 @@
 <table>
     <tr>
         <th>id</th>
+        <th>login_id</th>
         <th>user_number</th>
         <th>computer_number</th>
         <th>win_loss</th>
@@ -48,6 +49,7 @@
         echo '<tr>';
 
         echo '<th>' . $row["id"] . '</th>';
+        echo '<th>' . $row["login_id"] . '</th>';
         echo '<th>' . $row["user_number"] . '</th>';
         echo '<th>' . $row["computer_number"] . '</th>';
         echo '<th>' . $row["win_loss"] . '</th>';

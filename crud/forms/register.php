@@ -9,7 +9,7 @@
     <h2>Register</h2>
 </div>
 
-<form action="index.php" method="POST">
+<form action="index.php?action=register" method="POST">
 
     <div class="input-group">
         <label>Username</label>

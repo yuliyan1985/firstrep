@@ -7,9 +7,7 @@ $statement1 = $conn->query($log);
 $login = $statement1->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($login)){
-
-
-    $_SESSION['locked'] = "id";
+    $_SESSION['locked'] = $login[0]['id'];
 }
 
 if (empty($login)) {
@@ -17,3 +15,4 @@ if (empty($login)) {
 }
 header("location:index.php");
 ?>
+

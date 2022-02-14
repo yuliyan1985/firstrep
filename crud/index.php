@@ -2,18 +2,21 @@
 session_start();
 require_once 'db.php';
 
-if (!isset($_SESSION['locked']) && $_GET['action'] != 'authorization') {
+if (!isset($_SESSION['locked'])
+    && $_GET['action'] != 'authorization'
+    && $_GET['action']!='register_forms'
+    && $_GET['action']!='register') {
      $_GET['action'] = "login";
 }
 
 switch ($_GET['action']) {
 
-    case'server':
-        require_once 'registration/server.php';
+    case'register_forms':
+        require_once 'forms/register.php';
         break;
 
     case'register':
-        require_once 'registration/register.php';
+        require_once 'scripts/register.php';
         break;
 
     case'login':

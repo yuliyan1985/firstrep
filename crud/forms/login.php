@@ -50,7 +50,7 @@
         </tr>
 
         <tr>
-            <td>Already have an account? <a href= "http://php.local/crud/registration/register.php">Sign in</a></td>
+            <td>Already have an account? <a href= "http://php.local/crud/index.php?action=register_forms">Sign up</a></td>
         </tr>
 
     </table>
