@@ -17,21 +17,22 @@ if ($number == $_POST["number"]) {
     echo "ти печелиш";
     $win = true;
 }
-$sel = "SELECT points FROM login WHERE id = '$id'";
+
+$sel = "SELECT points FROM login WHERE id ='$_SESSION'['locked']";
 $st = $conn->query($sel);
 $login = $st->fetchColumn();
 
-var_dump($login);
+
 
 if ($win = true){
-    $points ++;
+    $points = $_SESSION['locked'] +1;
 }
 if ($win = false ){
-    $points --;
+    $points = $_SESSION['locked'] -1;
 }
 $id = $_POST['id'];
-$points = $_POST['points'];
-$my = "UPDATE login SET points = '$points' WHERE id = '$id'";
+
+$my = "UPDATE login SET points = '$points' WHERE id = '$_SESSION'['locked']";
 
 
 $sql = "INSERT INTO `number_guess` (`id`, `login_id`, `user_number`, `computer_number`, `win_loss`) 
