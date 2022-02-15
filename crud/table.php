@@ -37,6 +37,7 @@
         <th>user_number</th>
         <th>computer_number</th>
         <th>win_loss</th>
+        <th>points</th>
         <th>CRUD</th>
 
     </tr>
@@ -53,6 +54,7 @@
         echo '<th>' . $row["user_number"] . '</th>';
         echo '<th>' . $row["computer_number"] . '</th>';
         echo '<th>' . $row["win_loss"] . '</th>';
+
 
         echo '<th>' . "<a href='http://php.local/crud/index.php?action=edit&edit=" .
             $row['id'] . "' class='btn btn-info'>Edit</a> ";

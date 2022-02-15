@@ -19,11 +19,12 @@ if ($number == $_POST["number"]) {
 }
 $sel = "SELECT points FROM login WHERE id = '$id'";
 $st = $conn->query($sel);
-$login = $st->fetch();
+$login = $st->fetchColumn();
+
 var_dump($login);
+
 if ($win = true){
     $points ++;
-
 }
 if ($win = false ){
     $points --;
