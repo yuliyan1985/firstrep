@@ -17,7 +17,10 @@ if ($number == $_POST["number"]) {
     echo "ти печелиш";
     $win = true;
 }
-$sel = "SELECT points FROM login";
+$sel = "SELECT points FROM login WHERE id = '$id'";
+$st = $conn->query($sel);
+$login = $st->fetch();
+var_dump($login);
 if ($win = true){
     $points ++;
 
