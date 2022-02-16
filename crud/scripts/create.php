@@ -18,21 +18,24 @@ if ($number == $_POST["number"]) {
     $win = true;
 }
 
-$sel = "SELECT points FROM login WHERE id ='$_SESSION'['locked']";
+$sel = "SELECT points FROM login WHERE id = '" . $_SESSION['locked']  . "'";
 $st = $conn->query($sel);
-$login = $st->fetchColumn();
+$databasePoints = $st->fetchColumn();
 
 
 
-if ($win = true){
-    $points = $_SESSION['locked'] +1;
+if ($win == true){
+    $points = $databasePoints +1;
 }
-if ($win = false ){
-    $points = $_SESSION['locked'] -1;
+if ($win == false ){
+    $points = $databasePoints -1;
 }
-$id = $_POST['id'];
 
-$my = "UPDATE login SET points = '$points' WHERE id = '$_SESSION'['locked']";
+
+
+$my = "UPDATE login SET points = '" . $points . "' WHERE id ='" . $_SESSION['locked'] . "'";
+$q = $conn->prepare($my);
+$q->execute();
 
 
 $sql = "INSERT INTO `number_guess` (`id`, `login_id`, `user_number`, `computer_number`, `win_loss`) 

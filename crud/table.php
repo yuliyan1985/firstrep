@@ -45,6 +45,8 @@
     <?php
 
 
+
+
     foreach ($number_guess as $row) {
 
         echo '<tr>';
@@ -54,6 +56,15 @@
         echo '<th>' . $row["user_number"] . '</th>';
         echo '<th>' . $row["computer_number"] . '</th>';
         echo '<th>' . $row["win_loss"] . '</th>';
+        echo '<th>';
+        foreach ($taken as $value) {
+            if ($value['id'] == $row['login_id']) {
+            echo $value['points'];
+            }
+
+
+        }
+        echo '</th>';
 
 
         echo '<th>' . "<a href='http://php.local/crud/index.php?action=edit&edit=" .
@@ -66,7 +77,6 @@
         echo '</tr>';
 
     }
-
     ?>
 
 </table>

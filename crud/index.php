@@ -2,6 +2,7 @@
 session_start();
 require_once 'db.php';
 
+
 if (!isset($_SESSION['locked'])
     && $_GET['action'] != 'authorization'
     && $_GET['action']!='register_forms'
@@ -52,12 +53,19 @@ switch ($_GET['action']) {
         break;
 
     default:
+
+
         $sqlselect = "SELECT * FROM number_guess";
         $statement = $conn->query($sqlselect);
         $number_guess = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $take = "SELECT id,points FROM login ";
+        $took = $conn->query($take);
+        $taken = $took->fetchAll(PDO::FETCH_ASSOC);
+
+
         require_once 'table.php';
         break;
 }
-
 
 ?>
