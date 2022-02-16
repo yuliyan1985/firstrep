@@ -7,6 +7,13 @@ You have to catch the ball to score a point. = You have to catch the b**l to sco
 
 
 
+1. създавам 3 файла (index , forms, scripts)
+2. правя връзката между файловете
+3. правя input и submit бутоните във файла fomrs
+4. във файла скриптс дифирнирам цензурираните думи с промениливи, чиито стойности ще са цензурираните думи
+5. във файла scripts създавам цикъл (foreach)  
+
+
 
 
 
