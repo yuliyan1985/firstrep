@@ -30,7 +30,7 @@
 </body>
 <form action="index.php?action=scripts" method="POST">
     <label for="sentences">write a sentence</label>
-    <input class="formelement" type="text" name="number" placeholder="sentence">
+    <input class="formelement" type="text" name="sentence" placeholder="sentence">
     <br>
     <button class="formelemeent" type="submit">press</button>
 
