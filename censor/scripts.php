@@ -7,7 +7,7 @@ $censorWords = array(
 );
 
 $pieces = explode(" ",$_POST['sentence']);
-
+$new = '';
 foreach($pieces as $value){
     if(in_array($value, $censorWords)){
         $length = strlen($value);
@@ -19,17 +19,16 @@ foreach($pieces as $value){
 
 
         }
-        $start = $start.$end;
-
-
+        $value = $start.$end;
     }
+    $new = $new .  ' '  .  $value;
 
-$back = array($value , $start);
-    $backTo = implode(' ',$back);
-    echo $backTo;
 }
 
+echo $new;
 
+
+?>
 
 
 
