@@ -1,59 +1,18 @@
 <?php
-$a
 
 
 
+$Color = array('A' => 'Blue', 'B' => 'Green', 'c' => 'Red');
+
+foreach ($Color as $abc => $value){
+    for($i=0; $i < count($Color); $i++) {
+        $value[$i] = strtolower($value[$i]);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//$Color = array('A' => 'Blue', 'B' => 'Green', 'c' => 'Red');
-//
-//foreach ($Color as $abc => $value){
-//    for($i=0; $i < count($Color); $i++) {
-//        $value[$i] = strtolower($value[$i]);
-//        $abc[$i] = strtolower($abc[$i]);
-//
-//
-//    }
-//    echo $abc . " " . $value . " ";
-//}
+    }
+    echo $abc . " " . $value . " ";
+}
 
 
 
