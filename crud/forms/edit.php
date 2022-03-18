@@ -2,8 +2,13 @@
 <html>
 <head>
     <style>
-        .hide{
+        .hide {
             display: none;
+        }
+
+        #win_loss {
+            color: darkblue;
+            background-color: #3c763d;
         }
     </style>
 </head>

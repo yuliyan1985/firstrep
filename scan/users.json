@@ -1,0 +1,47 @@
+{
+  "users" : [
+    {
+      "name": "juli",
+      "age": 29,
+      "isProgrammer": true,
+      "skills": [
+        "HTML",
+        "CSS",
+        "javascript"
+      ],
+      "address": {
+        "city": "Sofia",
+        "state": "BG",
+        "country": "bulgaria"
+      }
+    },
+    {
+      "name": "maria",
+      "age": 29,
+      "isProgrammer": true,
+      "skills": [
+        "HTML",
+        "CSS",
+        "javascript"
+      ],
+      "address": {
+        "city": "Sofia",
+        "state": "BG",
+        "country": "bulgaria"
+      }
+    },
+    {
+      "name": "petq",
+      "age": 21,
+      "isProgrammer": false,
+      "skills": [],
+      "address": {
+        "city": "Varna",
+        "state": "BG",
+        "country": "bulgaria"
+      }
+    }
+  ]
+
+
+}

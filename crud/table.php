@@ -9,12 +9,14 @@
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
+
         }
 
         td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
+            border: 5px solid #dddddd;
+            text-align: center;
             padding: 8px;
+            background-color: #3c763d;
         }
 
         tr:nth-child(even) {
@@ -22,7 +24,7 @@
         }
 
         a {
-            color: darkblue;
+            color: black;
         }
     </style>
 </head>
