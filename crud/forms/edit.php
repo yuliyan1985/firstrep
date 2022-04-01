@@ -21,7 +21,7 @@ if (isset($_GET['edit'])) {
 
     $update = true;
 
-    $update = true;
+
     $result = $conn->prepare('SELECT * FROM number_guess where id = :id');
     $result->bindParam('id', $id, PDO::PARAM_INT);
     $result->execute();

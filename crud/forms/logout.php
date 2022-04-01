@@ -1,5 +1,5 @@
 <?php
 session_start();
 unset($_SESSION['locked']);
-header('location:index.php');
+header('location:users.php');
 ?>

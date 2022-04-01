@@ -28,6 +28,6 @@ foreach($pieces as $value){
 
 $_SESSION['result'][] = implode(' ', $new );
 
-header('location:index.php');
+header('location:users.php');
 ?>
 

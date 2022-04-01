@@ -5,6 +5,7 @@ $pics = array_diff(scandir('images'), array('..', '.'));
 
 $sql = "SELECT `name` FROM `files`";
 $statement = $conn->query($sql);
+
 $table = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 if (empty($table)) {

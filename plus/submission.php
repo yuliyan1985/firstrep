@@ -1,4 +1,17 @@
+<?php
+require_once 'dbt.php';
+
+    $sql = "SELECT `numbers` FROM `counted`";
+    $sqli = $conn->query($sql);
+
+    $tables = $sqli->fetchAll(PDO::FETCH_COLUMN);
+
+
+
+?>
 <!DOCTYPE html>
+
+
 <html>
 <head>
     <title>plus</title>
@@ -11,7 +24,7 @@
     <i class="icon-check2"></i> +
 </button>
 
-<div id = "ne">1</div>
+<div id = "ne"><?php echo $tables[0] ?></div>
 
 
 
@@ -22,8 +35,11 @@
 
 <script>
     $(document).ready(function() {
+
         $("#submit").on('click', function () {
+
             let nqma = $('#ne').text();
+
             $.ajax({
                 method: 'POST',
                 url: 'index.php',
@@ -37,6 +53,8 @@
         });
     })
 </script>
+
+
 </body>
 
 

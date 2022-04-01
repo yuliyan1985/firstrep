@@ -14,7 +14,7 @@ if (!empty($login)){
 if (empty($login)) {
     $_SESSION['error'] = "incorrect username or password";
 }
-header("location:index.php");
+header("location:users.php");
 ?>
 
 

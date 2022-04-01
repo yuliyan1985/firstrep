@@ -1,16 +1,14 @@
 <?php
 
-
+require_once 'db.php';
 
 $table = "SELECT `palyers` FROM `players_table` ";
 $b = $conn->query($table);
 $tennis = $b->fetchAll(PDO::FETCH_COLUMN);
 
-
 $sql = "SELECT `players_1`, players_2 FROM `scores` ";
 $b = $conn->query($sql);
 $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
-
 
 
 $n = count($tennis);

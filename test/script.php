@@ -1,4 +1,5 @@
 <?php
+
 $ajaxInput = $_POST['ajax_input'];
 
 if(is_numeric($ajaxInput))
@@ -7,5 +8,5 @@ if(is_numeric($ajaxInput))
 }
 else
 {
-    echo "Здравей ".$ajaxInput;
+    echo "hello ".$ajaxInput;
 }
