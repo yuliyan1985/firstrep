@@ -13,17 +13,26 @@ require_once 'db.php';
     <input type="text" class="form-control required" id="result" name="result" placeholder="Insert score here">
        <br>
        <br>
-        <select id="player_name" name="player_name">
-            <option>players</option>
+
+
+
+
+        <select id="id" name="id">
+            <option>---players---</option>
 <?php
-$sql = "SELECT * FROM `scores`";
+
+$id = $_GET['id'];
+
+$sql = "SELECT *FROM `scores` WHERE `id` = $id";
 $b = $conn->query($sql);
 $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
 
-foreach($players_1_2 as $player_name) {
+foreach($players_1_2 as $id) {
+
     ?>
-    <option><?php echo $player_name['players_1','players_2'];?></option>
-<?php
+    <option value="<?php echo $id['id']; ?>"><?php echo $id['players_1']." vs ".$id['players_2']; ?></option>
+
+    <?php
 }?>
  </select>
 

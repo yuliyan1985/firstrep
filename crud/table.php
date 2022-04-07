@@ -69,10 +69,10 @@
         echo '</th>';
 
 
-        echo '<th>' . "<a href='http://php.local/crud/users.php?action=edit&edit=" .
+        echo '<th>' . "<a href='http://php.local/crud/index.php?action=edit&edit=" .
             $row['id'] . "' class='btn btn-info'>Edit</a> ";
 
-        echo "<a href= http://php.local/crud/users.php?action=delete&delete=" . $row['id'] . " class='btn btn-danger'>Delete</a>";
+        echo "<a href= http://php.local/crud/index.php?action=delete&delete=" . $row['id'] . " class='btn btn-danger'>Delete</a>";
         '</th>';
 
 

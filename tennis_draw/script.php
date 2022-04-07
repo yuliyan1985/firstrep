@@ -2,6 +2,7 @@
 
 require_once 'db.php';
 
+
 $table = "SELECT `palyers` FROM `players_table` ";
 $b = $conn->query($table);
 $tennis = $b->fetchAll(PDO::FETCH_COLUMN);
