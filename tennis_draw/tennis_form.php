@@ -2,6 +2,13 @@
 <?php
 require_once 'db.php';
 ?>
+<head>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
 <body>
 <div id="div-id">
     <form action="tennis_table.php" method="POST">
@@ -17,8 +24,8 @@ require_once 'db.php';
 
 
 
-        <select id="id" name="id">
-            <option>---players---</option>
+        <select class="hide" id="id" name="id">
+
 <?php
 
 $id = $_GET['id'];
@@ -30,7 +37,7 @@ $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
 foreach($players_1_2 as $id) {
 
     ?>
-    <option value="<?php echo $id['id']; ?>"><?php echo $id['players_1']." vs ".$id['players_2']; ?></option>
+    <option  value="<?php echo $id['id']; ?>"><?php echo $id['players_1']." vs ".$id['players_2']; ?></option>
 
     <?php
 }?>

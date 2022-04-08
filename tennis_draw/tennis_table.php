@@ -44,19 +44,6 @@ require_once 'script.php';
     </tr>
     <?php
 
-//    $test = 2;
-//    $user = [
-//        [
-//            1 => 'ivan',
-//            2 => 'petkan',
-//            3 => 'JULIANA',
-//            'petrov' => 3,
-//        ],
-//    ];
-//
-//    echo $user[$test];
-//        echo $user[$user['petrov']].' '.end(array_keys($user));
-
 
 
     $id = $_POST['id'];
@@ -66,6 +53,7 @@ require_once 'script.php';
     $result_array = explode(":", $result);
 
     if ((int)$result_array[0] > (int)$result_array[1]) {
+
         $names = 'players_1';
     } else {
         $names = "players_2";
@@ -114,7 +102,9 @@ require_once 'script.php';
     $counts = array_count_values($win);
     arsort($counts);
     $winner = array_slice(array_keys($counts),0,1, true);
-echo 'победителят е :' . $winner[0];
+
+
+     echo "победителят е : ".$winner[0];
 
     ?>
 </table>
