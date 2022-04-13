@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <head>
 
 </head>
 <body>
 
 <form action="tennis_table.php" method="POST"
-
-<input type="text" class="form control required" name="start" placeholder="add player"
+<label for="add">insert new player</label>
+<br>
+<input type="text" class="form-control required" name="addPlayer" placeholder="add player">
     <br>
 
 <button id="submit-button" type="submit" class="btn btn-success btn-lg btn-block">

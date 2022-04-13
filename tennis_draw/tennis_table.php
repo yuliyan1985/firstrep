@@ -1,9 +1,7 @@
 <?php
 require_once 'db.php';
-require_once 'script.php';
-
+require_once 'score.php';
 ?>
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -35,36 +33,29 @@ require_once 'script.php';
     </style>
 </head>
 <body>
+
+<?php
+//изчезват линковете при запълване на таблицата
+$sql = "SELECT `players_1`, players_2 FROM `scores` ";
+$b = $conn->query($sql);
+$players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
+if (empty($players_1_2)) {
+    echo '<a href="script.php">start tournament </a>';
+    echo '<br>';
+    echo '<a href="addPlayer.php">add player</a>';
+}
+?>
+
+<br>
 <table>
     <tr>
         <th>players_1</th>
         <th>players_2</th>
         <th>score</th>
         <th>winner</th>
+        <th>change player</th>
     </tr>
     <?php
-
-
-
-    $id = $_POST['id'];
-    $result = $_POST['result'];
-
-
-    $result_array = explode(":", $result);
-
-    if ((int)$result_array[0] > (int)$result_array[1]) {
-
-        $names = 'players_1';
-    } else {
-        $names = "players_2";
-
-    }
-    if (isset($_POST['result'])) {
-        $updateResult = "UPDATE `scores` SET `score` = '".$result."', `winner_player_id` = `".$names."` WHERE `id` ='".$id."'";
-        $updateScore = $conn->prepare($updateResult);
-        $updateScore->execute();
-
-    }
 
 
     $sql = "SELECT * FROM `scores`";
@@ -73,7 +64,6 @@ require_once 'script.php';
 
 
     foreach ($players_1_2 as $players) {
-
 
 
         echo '<tr>';
@@ -87,10 +77,10 @@ require_once 'script.php';
             echo "резултат : ".$players['score'];
         }
         echo '<th>'.$players['winner_player_id'].'</th>';
-
+        echo '<th>' . "<a href='http://php.local/tennis_draw/changePlayer.php?id=".
+            $players['id']."' class='btn btn-info'>смени играч</a> ";
         echo '</th>';
         echo '</tr>';
-
 
 
     }
@@ -101,12 +91,28 @@ require_once 'script.php';
 
     $counts = array_count_values($win);
     arsort($counts);
-    $winner = array_slice(array_keys($counts),0,1, true);
+    $winner = array_slice(array_keys($counts), 0, 1, true);
 
 
-     echo "победителят е : ".$winner[0];
+    echo "победителят е : ".$winner[0];
 
     ?>
 </table>
+
+
+<?php
+// да няма празен ред в таблицата
+if (isset($_POST['addPlayer']) && strlen($_POST['addPlayer']) !== 0) {
+    $addPl = $_POST['addPlayer'];
+
+    $insertPlayer = "INSERT INTO `players_table` (`palyers`)
+VALUES ('".$addPl."');";
+    $add_players = $conn->prepare($insertPlayer);
+    $add_players->execute();
+}
+
+
+?>
+
 </body>
 </html>

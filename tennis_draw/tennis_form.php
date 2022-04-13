@@ -1,13 +1,10 @@
 <html>
 <?php
 require_once 'db.php';
+
 ?>
 <head>
-    <style>
-        .hide{
-            display: none;
-        }
-    </style>
+
 </head>
 <body>
 <div id="div-id">
@@ -16,15 +13,15 @@ require_once 'db.php';
     <label for="result">
     Scores
     </label>
-
-    <input type="text" class="form-control required" id="result" name="result" placeholder="Insert score here">
+    <input type="number" class="form-control required" id="result" name="result" min="0" max="3" placeholder="Insert score here">
+        :
+    <input type="number" class="form-control required" id="result2" name="result2" min="0" max="3" placeholder="Insert score here">
        <br>
        <br>
 
 
 
 
-        <select class="hide" id="id" name="id">
 
 <?php
 
@@ -37,11 +34,11 @@ $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
 foreach($players_1_2 as $id) {
 
     ?>
-    <option  value="<?php echo $id['id']; ?>"><?php echo $id['players_1']." vs ".$id['players_2']; ?></option>
+        <input type="hidden" name ="scores_id" value = "<?php echo $id['id']?>;">
 
     <?php
 }?>
- </select>
+
 
 
 

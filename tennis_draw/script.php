@@ -29,7 +29,6 @@ if(empty($players_1_2)) {
                 $insertPlayers = "INSERT INTO `scores` ( `players_1`, `players_2` ) 
 
 VALUES ('".$players."','".$players2."');";
-
                 $ql = $conn->prepare($insertPlayers);
                 $ql->execute();
 
@@ -37,6 +36,6 @@ VALUES ('".$players."','".$players2."');";
         }
     }
 }
-
+header("Location: tennis_table.php");
 ?>
 
