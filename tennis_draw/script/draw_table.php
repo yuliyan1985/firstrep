@@ -3,7 +3,7 @@
 require_once 'db.php';
 
 
-$table = "SELECT `palyers` FROM `players_table` ";
+$table = "SELECT `players` FROM `players_table` ";
 $b = $conn->query($table);
 $tennis = $b->fetchAll(PDO::FETCH_COLUMN);
 
@@ -37,5 +37,6 @@ VALUES ('".$players."','".$players2."');";
     }
 }
 header("Location: tennis_table.php");
-?>
 
+
+?>

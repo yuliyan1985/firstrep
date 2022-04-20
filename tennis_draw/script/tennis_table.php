@@ -42,7 +42,7 @@ $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
 if (empty($players_1_2)) {
     echo '<a href="script.php">start tournament </a>';
     echo '<br>';
-    echo '<a href="addPlayer.php">add player</a>';
+    echo '<a href="forms/addPlayer.php">add player</a>';
 }
 ?>
 
@@ -58,17 +58,32 @@ if (empty($players_1_2)) {
     <?php
 
 
-    $sql = "SELECT * FROM `scores`";
-    $b = $conn->query($sql);
-    $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
+    $joinPlayers = "
+SELECT
+scores.id,
+scores.players_1,
+scores.players_2,
+scores.score,
+scores.winner_player_id,
+pt1.players as player_1_name,
+pt2.players as player_2_name,
+winners.players as winners_name
+FROM
+    `scores`
+JOIN `players_table` AS pt1 ON `pt1`.`id` = `scores`.`players_1`
+JOIN `players_table` AS pt2 ON `pt2`.`id` = `scores`.`players_2`
+LEFT JOIN players_table AS winners ON `winners`.`id` = `scores`.`winner_player_id`
+;";
 
 
-    foreach ($players_1_2 as $players) {
+    $playersJoin = $conn->query($joinPlayers);
+    $joinTable = $playersJoin->fetchAll(PDO::FETCH_ASSOC);
 
+    foreach ($joinTable as $players) {
 
         echo '<tr>';
-        echo '<th>'.$players["players_1"].'</th>';
-        echo '<th>'.$players["players_2"].'</th>';
+        echo '<th>'.$players["player_1_name"].'</th>';
+        echo '<th>'.$players["player_2_name"].'</th>';
         echo '<th>';
         if (empty($players['score'])) {
             echo "<a href='http://php.local/tennis_draw/tennis_form.php?id=".
@@ -76,7 +91,7 @@ if (empty($players_1_2)) {
         } else {
             echo "резултат : ".$players['score'];
         }
-        echo '<th>'.$players['winner_player_id'].'</th>';
+        echo '<th>'.$players['winners_name'].'</th>';
         echo '<th>' . "<a href='http://php.local/tennis_draw/changePlayer.php?id=".
             $players['id']."' class='btn btn-info'>смени играч</a> ";
         echo '</th>';

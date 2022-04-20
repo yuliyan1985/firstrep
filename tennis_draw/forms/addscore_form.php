@@ -8,7 +8,7 @@ require_once 'db.php';
 </head>
 <body>
 <div id="div-id">
-    <form action="tennis_table.php" method="POST">
+    <form action="../tennis_table.php" method="POST">
 
     <label for="result">
     Scores
@@ -24,6 +24,7 @@ require_once 'db.php';
 
 
 <?php
+//вкарва резултата
 
 $id = $_GET['id'];
 

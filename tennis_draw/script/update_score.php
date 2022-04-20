@@ -2,6 +2,7 @@
 $result = $_POST['result'];
 $result_2 = $_POST['result2'];
 $scores_id = $_POST['scores_id'];
+
 if (!is_null($result) && !is_null($result_2)) {
     if ((int)$result == (int)$result_2) {
 
@@ -20,6 +21,6 @@ if (!is_null($result) && !is_null($result_2)) {
         $updateScore = $conn->prepare($updateResult);
         $updateScore->execute();
     }
-//сравнява резултата и валидира резултата да не е равен
+//сравнява резултата и вкарва резултата и победителя от мача в таблицата и валидира резултата да не е равен
 
 ?>
