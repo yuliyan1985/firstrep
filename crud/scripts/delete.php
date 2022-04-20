@@ -5,6 +5,6 @@ if(isset($_GET['delete'])) {
     $conn->query("DELETE FROM number_guess WHERE id=$id") or die($conn->error());
 }
 
-header("Location: users.php");
+header("Location: index.php");
 ?>
 

@@ -10,7 +10,7 @@ if ($_POST['password_1'] !== ($_POST['password_2'])){
 }
 else{
 
-    header("location:users.php");
+    header("location:index.php");
 }
 $ql = $conn->prepare($sq);
 $ql->execute();

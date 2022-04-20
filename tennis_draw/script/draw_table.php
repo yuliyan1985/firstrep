@@ -1,9 +1,9 @@
 <?php
 
-require_once 'db.php';
+require_once '../db.php';
 
 
-$table = "SELECT `players` FROM `players_table` ";
+$table = "SELECT `id` FROM `players_table` ";
 $b = $conn->query($table);
 $tennis = $b->fetchAll(PDO::FETCH_COLUMN);
 

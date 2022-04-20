@@ -1,6 +1,6 @@
 <?php
-require_once 'db.php';
-require_once 'score.php';
+require_once '../db.php';
+require_once 'update_score.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -40,9 +40,9 @@ $sql = "SELECT `players_1`, players_2 FROM `scores` ";
 $b = $conn->query($sql);
 $players_1_2 = $b->fetchAll(PDO::FETCH_ASSOC);
 if (empty($players_1_2)) {
-    echo '<a href="script.php">start tournament </a>';
+    echo '<a href="draw_table.php">start tournament </a>';
     echo '<br>';
-    echo '<a href="forms/addPlayer.php">add player</a>';
+    echo '<a href="../forms/addPlayer_form.php">add player</a>';
 }
 ?>
 
@@ -53,7 +53,6 @@ if (empty($players_1_2)) {
         <th>players_2</th>
         <th>score</th>
         <th>winner</th>
-        <th>change player</th>
     </tr>
     <?php
 
@@ -86,33 +85,39 @@ LEFT JOIN players_table AS winners ON `winners`.`id` = `scores`.`winner_player_i
         echo '<th>'.$players["player_2_name"].'</th>';
         echo '<th>';
         if (empty($players['score'])) {
-            echo "<a href='http://php.local/tennis_draw/tennis_form.php?id=".
+            echo "<a href='http://php.local/tennis_draw/forms/addscore_form.php?id=".
                 $players['id']."' class='btn btn-info'>добави резултат за този мач</a> ";
         } else {
             echo "резултат : ".$players['score'];
         }
         echo '<th>'.$players['winners_name'].'</th>';
-        echo '<th>' . "<a href='http://php.local/tennis_draw/changePlayer.php?id=".
-            $players['id']."' class='btn btn-info'>смени играч</a> ";
+
         echo '</th>';
         echo '</tr>';
-
-
     }
+
     $sql2 = "SELECT `winner_player_id` FROM `scores`";
     $b2 = $conn->query($sql2);
     $win = $b2->fetchAll(PDO::FETCH_COLUMN);
+
 
 
     $counts = array_count_values($win);
     arsort($counts);
     $winner = array_slice(array_keys($counts), 0, 1, true);
 
+    $selectPl = "SELECT `players` FROM `players_table` WHERE id = '$winner[0]'";
+    $selectPlayer = $conn->query($selectPl);
+    $selectPlayers = $selectPlayer->fetchAll(PDO::FETCH_COLUMN);
 
-    echo "победителят е : ".$winner[0];
+    echo "победителят е : ".$selectPlayers[0];
 
     ?>
 </table>
+
+<a href='http://php.local/tennis_draw/forms/changePlayer_form.php?name="  class='btn btn-info'>смени играч</a>
+
+
 
 
 <?php
@@ -120,7 +125,7 @@ LEFT JOIN players_table AS winners ON `winners`.`id` = `scores`.`winner_player_i
 if (isset($_POST['addPlayer']) && strlen($_POST['addPlayer']) !== 0) {
     $addPl = $_POST['addPlayer'];
 
-    $insertPlayer = "INSERT INTO `players_table` (`palyers`)
+    $insertPlayer = "INSERT INTO `players_table` (`players`)
 VALUES ('".$addPl."');";
     $add_players = $conn->prepare($insertPlayer);
     $add_players->execute();

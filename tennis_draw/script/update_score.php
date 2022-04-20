@@ -6,7 +6,7 @@ $scores_id = $_POST['scores_id'];
 if (!is_null($result) && !is_null($result_2)) {
     if ((int)$result == (int)$result_2) {
 
-        header("location: tennis_form.php?id=".$scores_id);
+        header("location: ../forms/addscore_form.php?id=".$scores_id);
 
     }
 }

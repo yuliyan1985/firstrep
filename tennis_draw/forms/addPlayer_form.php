@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="../tennis_table.php" method="POST"
+<form action="../script/tennis_table.php" method="POST"
 <label for="add">insert new player</label>
 <br>
 <input type="text" class="form-control required" name="addPlayer" placeholder="add player">
