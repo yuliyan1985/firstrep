@@ -5,7 +5,7 @@ VALUES ('" . $_SESSION['locked'] . "','" . $_POST['add'] .  "');";
 
 $ql = $conn->prepare($sq);
 $ql->execute();
-header('location:index.php?action=table');
+header('location:forms.php?action=table');
 ?>
 
 
