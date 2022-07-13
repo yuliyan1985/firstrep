@@ -105,7 +105,7 @@ if (empty($players_1_2)) {
 if (isset($_POST['addPlayer']) && strlen($_POST['addPlayer']) !== 0) {
     $addPl = $_POST['addPlayer'];
 
-    $insertPlayer = "INSERT INTO `players_table` (`palyers`)
+    $insertPlayer = "INSERT INTO `players_table` (`players`)
 VALUES ('".$addPl."');";
     $add_players = $conn->prepare($insertPlayer);
     $add_players->execute();

@@ -18,7 +18,7 @@ session_start();
     <button class="formelement" type="submit">press</button>
     <br>
     <?php
-    $randomNumber = rand(0, 10);
+    $randomNumber = rand(0, 1);
 
     echo "<br>";
     echo $_POST["name"] . " изтегли числото " . $randomNumber;
@@ -26,13 +26,13 @@ session_start();
     $name="name";
 
     if ($randomNumber > $_POST["number"]) {
-        echo "изтегленото число е по-голямо от $randomNumber";
+        echo "изтегленото число е по-голямо от избраното";
         echo "<br>";
         $win = false;
 
     }
     if ($randomNumber < $_POST["number"]) {
-        echo "изтегленото число е по-малко от $randomNumber";
+        echo "изтегленото число е по-малко от избраното";
         echo "<br>";
         $win = false;
 
@@ -57,8 +57,8 @@ session_start();
     echo "<br>";
     echo " лаптопа печели " . $_SESSION["лаптопа"];
 
-    $_SESSION["name"] = $_SESSION["name"] + 1;
-    echo $_SESSION["name"];
+//    $_SESSION["name"] = $_SESSION["name"] + 1;
+//    echo $_SESSION['name'];
 
     ?>
 </html>

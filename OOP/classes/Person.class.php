@@ -1,21 +1,51 @@
 <?php
-class Person {
 
-    public $name;
-    public $age;
+class Example
+{
+    public $min = 500;
+    public $max = 1000;
+    public $numbers = [
+        2,
+        5,
+        11,
+    ];
+
+    public $numberWord = [
+        2 => 'a',
+        5 => 's',
+        11 => 'd',
+    ];
 
 
+    public function printNumber($number)
+    {
+        foreach ($this->numbers as $k => $checkNumber) {
+            if ($number % array_product($this->numbers) == 0) {
+                return implode(' ', $this->numberWord);
+            }
 
-    public function __construct($name,  $age) {
-        $this->name = $name;
-        $this->age = $age;
+            if ($number % $checkNumber == 0 && isset($this->numberWord[$checkNumber])) {
+                return $this->numberWord[$checkNumber];
+            }
+        }
+
+        return $number;
     }
 
 
-    public function getPerson()
+
+
+
+    public function showData()
     {
-    $person = $this->name . " is " . $this->age . "years old!";
-    return $person;
+        for ($i = $this->min; $i <= $this->max; $i++)
+        {
+            echo $this->printNumber($i);
+              echo "<br>";
+
+        }
     }
 }
+
+
 ?>

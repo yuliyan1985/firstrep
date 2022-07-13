@@ -1,4 +1,5 @@
-<?php 
+
+<?php
 // $table = 11;
 
 // for($x = 1; $x <= 10; $x++ ) {
@@ -133,6 +134,7 @@ var_dump(newTask(2));
 var_dump(newTask(3));
 var_dump(newTask(11));
 var_dump(newTask(100));
+
 
 
 

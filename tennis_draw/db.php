@@ -1,6 +1,7 @@
 <?php
+//без 'db' e
 $host = 'db';
-$dbname = 'table_tannis_draw';
+$dbname = 'table_tennis_draw';
 $username = 'root';
 $password = 'password';
 
